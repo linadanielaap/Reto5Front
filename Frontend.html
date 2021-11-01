@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<title>Reto 5 - Tienda Barcos</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="css/estilo.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript" src="js/FuncionesReto5.js"></script>
+
+<body>
+
+    <div class="header">
+        <div class="header1">
+            <div class="header3">Tienda de Barcos</div>
+        </div>
+    </div>
+
+    <div class="main" id="page">
+
+        <div class="container1">
+            <div class="container2">
+                <img src="img/yate.png" style="width:80%">
+                <h3><a href="#boat" class="item-button">BARCOS</a></h3>
+                <p>Información de barcos disponibles</p>
+            </div>
+            <div class="container2">
+                <img src="img/cliente.png" alt="Steak" style="width:80%">
+                <h3><a href="#client" class="item-button">CLIENTES</a></h3>
+                <p>Información de nuestros clientes</p>
+            </div>
+            <div class="container2">
+                <img src="img/conversacion.png" alt="Cherries" style="width:80%">
+                <h3><a href="#message" class="item-button">MENSAJES</a></h3>
+                <p>Mensajes realizados en nuestra tienda</p>
+            </div>
+            <div class="container2">
+                <img src="img/lista.png" style="width:80%">
+                <h3><a href="#category" class="item-button">CATEGORÍAS</a></h3>
+                <p>Información de categorías disponibles</p>
+            </div>
+            <div class="container2">
+                <img src="img/reserva-en-linea.png" alt="Steak" style="width:80%">
+                <h3><a href="#Book" class="item-button">RESERVAS</a></h3>
+                <p>Información de las reservas realizadas</p>
+            </div>
+            <div class="container2">
+                <img src="img/administrador-web.png" alt="Cherries" style="width:80%">
+                <h3><a href="#Admin" class="item-button">ADMINISTRADORES</a></h3>
+                <p>Información de nuestros administradores</p>
+            </div>
+            <div class="container2">
+                <img src="img/reporte-anual.png" alt="Cherries" style="width:80%">
+                <h3><a href="#Reports" class="item-button">REPORTES</a></h3>
+                <p>Reportes generales de la tienda</p>
+            </div>
+        </div>
+
+        <div class="container3">
+            <div class="bar">
+                <a href="#" class="num-item">«</a>
+                <a href="#" class="num-item2">1</a>
+                <a href="#" class="num-item">»</a>
+            </div>
+        </div>
+
+        <hr id="boat">
+
+        <div class="container4">
+            <h3>BARCOS</h3><br>
+            <img src="img/embarcacion.png" alt="Me" class="imagen" width="300" height="150">
+            <div class="container5">
+                <h4><b>OPCIONES</b></h4>
+                <div>
+                    <h4><b>Nuevo Barco</b></h4>
+                    <ul>
+                        <li style="margin-bottom: 10px;">
+                            <label style="margin-right: 6px;">Nombre</label>
+                            <input required="true" type="text" id="nameB" placeholder="Name" style="margin-left: 12px;">
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <label style="margin-right: 10px;">Marca</label>
+                            <input required="true" type="text" id="brand" placeholder="Brand"
+                                style="margin-left: 10px;">
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <label style="margin-right: 6px;">Modelo</label>
+                            <input required="true" type="text" id="model" placeholder="Model"
+                                style="margin-left: 10px;">
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <label style="margin-right: 6px;">Descripción</label>
+                            <input required="true" type="text" id="descriptionB" placeholder="Description"
+                                style="margin-left: 12px;">
+                        </li>
+                        <li>
+                            <label style="margin-right: 6px;">Categoría</label>
+                            <select id="select-category">
+                            </select>
+                            <script type="text/javascript">
+                                window.onload = autoInicioCategoria();
+                            </script>
+                        </li>
+                    </ul>
+                    <p id="idB" style="color: white; font-size: xx-small; margin: 0; padding: 0"></p>
+                </div>
+                <div style="margin-left: 45%;">
+                    <button onclick="traerInformacionBarco()" style="margin-bottom: 20px;">Consultar</button>
+                    <button onclick="guardarInformacionBarco()" style=" margin-bottom: 20px;">Nuevo Barco</button>
+                    <button onclick="editarInformacionBarco()" style=" margin-bottom: 20px;">Actualizar Barco</button>
+                </div>
+
+                <div id="resultadoB"></div>
+            </div>
+            <h3><a href="#page" class="item-button">MENU</a></h3>
+        </div>
+
+        <hr id="client">
+
+        <div class="container4">
+            <h3>CLIENTES</h3><br>
+            <img src="img/clasificacion.png" alt="Me" class="imagen" width="300" height="150">
+            <div class="container5">
+                <h4><b>OPCIONES</b></h4>
+                <div>
+                    <h4><b>Nuevo Cliente</b></h4>
+                    <ul>
+                        <li style="margin-bottom: 10px;">
+                            <label style="margin-right: 3px;">Nombre</label>
+                            <input type="text" id="name" placeholder="Name">
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <label style="margin-right: 20px;">Email</label>
+                            <input type="email" id="email" placeholder="Email">
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <label style="margin-right: 3px;">Contraseña</label>
+                            <input type="text" id="passwordC" placeholder="Password">
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <label style="margin-right: 25px;">Edad</label>
+                            <input type="text" id="age" placeholder="Age">
+                        </li>
+                    </ul>
+                    <p id="id" style="color: white; font-size: xx-small; margin: 0; padding: 0"></p>
+                </div>
+                <div>
+                    <button onclick="traerInformacion()" style="margin-bottom: 20px;">Consultar</button>
+                    <button onclick="guardarInformacion()" style=" margin-bottom: 20px;">Nuevo Cliente</button>
+                    <button onclick="editarInformacion()" style=" margin-bottom: 20px;">Actualizar Cliente</button>
+                </div>
+                <div id="resultado"></div>
+            </div>
+            <h3><a href="#page" class="item-button">MENU</a></h3>
+        </div>
+
+        <hr id="message">
+
+        <div class="container4">
+            <h3>MENSAJES</h3><br>
+            <img src="img/hablar.png" alt="Me" class="imagen" width="300" height="150">
+            <div class="container5">
+                <h4><b>OPCIONES</b></h4>
+                <div>
+                    <h4>Nuevo Mensaje</h4>
+                    <ul>
+                        <li style="margin-bottom: 10px;">
+                            <label style="margin-right: 30px;">Mensaje</label>
+                            <input type="text" id="m" placeholder="Message">
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <label style="margin-right: 30px;">Cliente</label>
+                            <select id="select-clientM"></select>
+                            <script type="text/javascript">
+                                window.onload = autoInicioCliente();
+                            </script>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <label style="margin-right: 30px;">Barco</label>
+                            <select id="select-boatM"></select>
+                            <script type="text/javascript">
+                                window.onload = autoInicioBoatMensaje();
+                            </script>
+                        </li>
+                        
+                    </ul>
+                    <p id="idM" style="color: white; font-size: xx-small; margin: 0; padding: 0"></p>
+                </div>
+                <div>
+                    <button onclick="traerInformacionMensaje()" style="margin-bottom: 20px;">Consultar</button>
+                    <button onclick="guardarInformacionMensaje()" style="margin-bottom: 20px;">Nuevo Mensaje</button>
+                    <button onclick="editarInformacionMensaje()" style=" margin-bottom: 20px;">Actualizar
+                        Mensaje</button>
+                </div>
+                <div id="resultadoM"></div>
+            </div>
+            <h3><a href="#page" class="item-button">MENU</a></h3>
+        </div>
+        <hr id="category">
+
+        <div class="container4">
+            <h3>CATEGORÍAS</h3><br>
+            <img src="img/categoria.png" alt="Me" class="imagen" width="250" height="100">
+            <div class="container5">
+                <h4><b>OPCIONES</b></h4>
+                <div>
+                    <h4>Nueva Categoría</h4>
+                    <ul>
+                        <li style="margin-bottom: 10px;">
+                            <label style="margin-right: 25px;">Nombre</label>
+                            <input type="text" id="nameC" placeholder="Name" style="margin-left: 20px;">
+                            <p id="idC" style="color: white; font-size: xx-small; margin: 0; padding: 0"></p>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <label style="margin-right: 30px;">Descripcion</label>
+                            <input type="text" id="descriptionC" placeholder="Description">
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <button onclick="traerInformacionCategory()" style="margin-bottom: 20px;">Visualizar</button>
+                    <button onclick="guardarInformacionCategory()" style="margin-bottom: 20px;">Nueva Categoría</button>
+                    <button onclick="editarInformacionCategory()" style=" margin-bottom: 20px;">Actualizar
+                        Categoría</button>
+                </div>
+                <div id="resultadoC"></div>
+            </div>
+            <h3><a href="#page" class="item-button">MENU</a></h3>
+        </div>
+
+        <hr id="Book">
+
+        <div class="container4">
+            <h3>RESERVAS</h3><br>
+            <img src="img/reservado.png" alt="Me" class="imagen" width="250" height="100">
+            <div class="container5">
+                <h4><b>OPCIONES</b></h4>
+                <div>
+                    <h4>Nueva Reserva</h4>
+                    <ul>
+                        <li style="margin-bottom: 10px;">
+                            <label style="margin-right: 25px;">Fecha Incio</label>
+                            <input type="datetime" id="Sdate" placeholder="Start Date" style="margin-left: 20px;">
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <label style="margin-right: 30px;">Fecha Entrega</label>
+                            <input type="datetime" id="Edate" placeholder="End Date">
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <label style="margin-left: 55px;">Status</label>
+                            <input type="text" id="status" placeholder="Status" style="margin-left: 60px;">
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <label style="margin-right: 55px;">Cliente</label>
+                            <select id="select-client"></select>
+                            <script type="text/javascript">
+                                window.onload = autoInicioRelacionCliente();
+                            </script>
+                        </li>
+                        <li style="margin-bottom: 10px; margin-left: 200px;">
+                            <label style="margin-left: 55px;">Barco</label>
+                            <select id="select-boat" style="margin-left: 50px;"></select>
+                            <script type="text/javascript">
+                                window.onload = autoInicioBoat();
+                            </script>
+                        </li>
+
+                    </ul>
+                    <p id="idR" style="color: white; font-size: xx-small; margin: 0; padding: 0"></p>
+                </div>
+                <div style="margin-left: 500px;">
+                    <button onclick="traerInformacionReserva()" style="margin-bottom: 20px;">Visualizar</button>
+                    <button onclick="guardarInformacionReserva()" style="margin-bottom: 20px;">Nueva Reserva</button>
+                    <button onclick="editarInformacionReserva()" style=" margin-bottom: 20px;">Actualizar
+                        Reserva</button>
+                </div>
+                <div id="resultadoR"></div>
+            </div>
+            <h3><a href="#page" class="item-button">MENU</a></h3>
+        </div>
+
+        <hr id="Admin">
+
+        <div class="container4">
+            <h3>USUARIOS ADMINISTRADORES</h3><br>
+            <img src="img/administrador.png" alt="Me" class="imagen" width="250" height="100">
+            <div class="container5">
+                <h4><b>OPCIONES</b></h4>
+                <div>
+                    <h4>Nuevo Usuario</h4>
+                    <ul>
+                        <li style="margin-bottom: 10px;">
+                            <label style="margin-right: 3px;">Nombre</label>
+                            <input type="text" id="nameA" placeholder="Name">
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <label style="margin-right: 20px;">Email</label>
+                            <input type="email" id="emailA" placeholder="Email">
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <label style="margin-right: 3px;">Contraseña</label>
+                            <input type="text" id="passwordA" placeholder="Password">
+                        </li>
+                    </ul>
+                    <p id="idA" style="color: white; font-size: xx-small; margin: 0; padding: 0"></p>
+                </div>
+                <div>
+                    <button onclick="traerInformacionAdmin()" style="margin-bottom: 20px;">Visualizar</button>
+                    <button onclick="guardarInformacionAdmin()" style="margin-bottom: 20px;">Nuevo Usuario</button>
+                    <button onclick="editarInformacionAdmin()" style=" margin-bottom: 20px;">Actualizar Usuario</button>
+                </div>
+                <div id="resultadoA"></div>
+            </div>
+            <h3><a href="#page" class="item-button">MENU</a></h3>
+        </div>
+
+        <hr id="Reports">
+
+        <div class="container4">
+            <h3>REPORTES TIENDA</h3><br>
+            <img src="img/reportar.png" alt="Me" class="imagen" width="250" height="100">
+            <div class="container5">
+                <h4><b>OPCIONES</b></h4>
+                <div>
+                    <button onclick="traerReporteStatus()" style="margin-bottom: 20px;"> Generar Reporte Status Reservas
+                    </button><br>
+                    <label style="margin-right: 3px; margin-bottom: 20px;">Fecha Inicio</label>
+                    <input type="date" id="RstarDate" placeholder="descripcion"
+                        style="margin-right: 3px; margin-bottom: 20px;"><br>
+                    <label style="margin-right: 3px; margin-bottom: 20px;">Fecha Devolución</label>
+                    <input type="date" id="RdevolutionDate" placeholder="descripcion"
+                        style="margin-right: 3px; margin-bottom: 20px;"><br>
+                    <button onclick="traerReporteDate()" style="margin-bottom: 20px;"> Generar Reporte por fecha
+                    </button><br>
+                    <button onclick="traerReporteClientes()" style="margin-bottom: 20px;margin-left: 450px;"> Generar
+                        Reporte Clientes</button>
+                </div>
+                <div id="resultadoStatus"></div>
+                <div id="resultadoDate"></div>
+                <div id="resultadoClientes"></div>
+            </div>
+            <h3><a href="#page" class="item-button">MENU</a></h3>
+        </div>
+    </div>
+</body>
+
+</html>
